@@ -20,30 +20,21 @@ var topics = [];
 
 				var gifDiv = $("<div class='gif'>");  // creating a div dynamically, class=gif
 					console.log(gifDiv);
-				// var still = $("<div data-state='still'>"); // associating 
-					// console.log(still);
+
 				var rating = response.data[i].rating;
 				var pOne = $("<p>").text("Rating: " + rating);  // creating a <p> dynamically
 				gifDiv.append(pOne);
 					console.log(rating);
-
-				// not working
-				// var imgUrlAnimate = response.data[i].images.fixed_height.url;  // animated
-
+			
 				
-				// var imgAnimate = $("<img>").data("animate", response.data[i].images.fixed_height.url).data("state", "still");
-				// var imgStatic = $("<img>").data("still", response.data[i].images.fixed_height_still.url).data("state", "still");
-				// var animate = $("<img>").attr("src", response.data[i].images.fixed_height.url);
 				var static = $("<img>").attr("src", response.data[i].images.fixed_height_still.url);
 				static.attr("data-still", response.data[i].images.fixed_height_still.url);
 				static.attr("data-animate", response.data[i].images.fixed_height.url);
 				static.attr("data-state", "still");  // creating an <img> dynamically
 				static.addClass("animate");
 				gifDiv.append(static);
-					// console.log(imgUrlStatic);
+
 					console.log(static);
-					// console.log(imgAnimate);
-					// console.log(imgStatic);
 
 				$(".gif-dump").prepend(gifDiv);
 
